@@ -2,16 +2,17 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
 
-rclpy.init()
-node = Node("listener")
+class Listener():
+    def __init__(self, node):
+        self.node = node
+        self.sub = node.create_subscription(Int16, "countup", self.cb, 10)
 
-
-def cb(msg):
-    global node
-    node.get_logger().info("Listen: %d" % msg.data)
-
+    def cb(self, msg):
+        self.node.get_logger().info("Listen: %d" % msg.date)
 
 def main():
-    sub = node.create_subscription(Int16, "countup", cb, 10)
+    rclpy.init()
+    node = Node("listener")
+    listener = Listener(node)
     rclpy.spin(node)
 
