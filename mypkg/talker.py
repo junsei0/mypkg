@@ -7,7 +7,7 @@ from std_msgs.msg import String
 class LandMarkGPS(Node):
     def __init__(self):
         super().__init__('landmark_gps')
-        self.pub = self.create_publisher(String, 'landmark_gps_topic', 10)
+        self.publisher = self.create_publisher(String, 'landmark_gps_topic', 10)
         self.timer = self.create_timer(2.0, self.publish_landmark_coordinates)
         self.landmarks = [
             {"name": "エッフェル塔", "latitude": 48.8583, "longitude": 2.2944},
