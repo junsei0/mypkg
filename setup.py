@@ -1,6 +1,6 @@
-from setuptools import setup
 import os
 from glob import glob
+from setuptools import setup
 
 package_name = 'mypkg'
 
@@ -22,10 +22,9 @@ setup(
     license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
-    'console_scripts': [
+        'console_scripts': [
             'talker = mypkg.talker:main', 
             'listener = mypkg.listener:main',
         ],
     },
 )
-
