@@ -22,7 +22,7 @@ setup(
     license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
-    'console_scripts': [
+        'console_scripts': [
             'talker = mypkg.talker:main', 
             'listener = mypkg.listener:main',
         ],
