@@ -7,7 +7,7 @@ from std_msgs.msg import String
 class LandMarkGPS(Node):
     def __init__(self):
         super().__init__('landmark_gps')
-        self.publisher = self.create_publisher(String, 'landmark_gps_topic', 10)
+        self.publisher_ = self.create_publisher(String, 'landmark_gps_topic', 10)
         self.timer = self.create_timer(2.0, self.publish_landmark_coordinates)
         self.landmarks = [
             {"name": "エッフェル塔", "latitude": 48.8583, "longitude": 2.2944},
@@ -18,15 +18,15 @@ class LandMarkGPS(Node):
         ]
         self.index = 0
 
-def publish_landmark_coordinates(self):
-    landmark = self.landmarks[self.index]
-    message = String()
+    def publish_landmark_coordinates(self):
+        landmark = self.landmarks[self.index]
+        message = String()
 
-    message.data = (f'{landmark["name"]}: 緯度 {landmark["latitude"]}, 'f'経度 {landmark["longitude"]}')
+        message.data = (f'{landmark["name"]}: 緯度 {landmark["latitude"]}, 'f'経度 {landmark["longitude"]}')
 
-    self.get_logger().info(f'Publishing: "{message.data}"')
-    self.publisher_.publish(message)
-    self.index = (self.index + 1) % len(self.landmarks)
+        self.get_logger().info(f'Publishing: {self.index}')
+        self.publisher_.publish(message)
+        self.index = (self.index + 1) % len(self.landmarks)
 
 def main(args=None):
     rclpy.init(args=args)
