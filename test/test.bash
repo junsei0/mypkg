@@ -9,9 +9,9 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 log_file="/tmp/landmark_test.log"
-timeout 10 ros2 launch mypkg talk_listen.launch.py > "$log_file" &
+timeout 15 ros2 launch mypkg talk_listen.launch.py > "$log_file" &
 
-sleep 10
+sleep 15
 
 previous_time=0
 landmark_list=("エッフェル塔: 緯度 48.8583, 経度 2.2944" \ 
