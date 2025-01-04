@@ -6,9 +6,9 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class LandMarkGPS(Node):
+class LandMark(Node):
     def __init__(self):
-        super().__init__('landmark_gps')
+        super().__init__('landmark')
         self.publisher_ = self.create_publisher(String, 'landmark_topic', 10)
         self.timer = self.create_timer(3.0, self.publish_landmark_coordinates)
         self.landmarks = [
@@ -30,10 +30,10 @@ class LandMarkGPS(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    landmark_gps = LandMarkGPS()
-    rclpy.spin(landmark_gps)
-    landmark_gps.destroy_node()
-    rclpy.shutdow
+    landmark = LandMark()
+    rclpy.spin(landmark)
+    landmark.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
