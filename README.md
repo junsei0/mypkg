@@ -20,13 +20,13 @@ $ git clone https://github.com/junsei0/mypkg.git
 ```
 **landmark.py**  
 3秒おきに特定の名所の緯度経度をトピック/landmark_topicを通じて送信するノードです。
-端末1で以下のコマンドで実行します。  
+以下のコマンドで実行します。  
 ```
 $ ros2 run mypkg landmark
 ```
-実行してもその端末1上では何も表示されません。
+実行しても端末上では何も表示されません。
 
-トピック/landmark_topicを受信して、特定の名所の緯度経度の内容を端末2に表示するには以下のコマンドを端末2で実行します。
+トピック/landmark_topicを受信して、特定の名所の緯度経度の内容を別の端末上に表示するには以下のコマンドを別の端末で実行します。
 ```
 $ ros2 topic echo /landmark_topic
 ```
