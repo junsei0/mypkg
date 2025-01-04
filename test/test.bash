@@ -6,7 +6,7 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 10 ros2 launch maypkg talk_listen.launch.py > /tmp/mypkg.log &
+timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/landmark_test.log &
 
 sleep 10
 
