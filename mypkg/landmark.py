@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Junsei Iimori <craftboy0228@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
 
 import rclpy
 from rclpy.node import Node
@@ -15,7 +17,8 @@ class LandMarkGPS(Node):
             {"name": "東京タワー", "latitude": 35.6586, "longitude": 139.7454},
             {"name": "シドニー・オペラハウス", "latitude": -33.8568, "longitude": 151.2153},
             {"name": "ギザのピラミッド", "latitude": 29.5845, "longitude": 31.0803},
-        ]
+            {"name": "モン・サン=ミシェル", "latitude": 48.3810, "longitude": -1.511111},
+]
         self.index = 0
 
     def publish_landmark_coordinates(self):
