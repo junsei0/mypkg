@@ -9,8 +9,9 @@ import launch_ros.actions
 def generate_launch_description():
     landmark = launch_ros.actions.Node(
         package='mypkg',
-        executable='landmark'
-        output='screen'
+        executable='landmark',
+        output='screen',
         parameters=[{'use_sim_time': False}]
     )
+
     return launch.LaunchDescription([landmark])
