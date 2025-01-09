@@ -26,7 +26,7 @@
 ```
 $ ros2 run mypkg landmark
 ```
-実行しても端末上では何も表示されません。
+実行しても端末上では何も表示されません。  
 トピックの内容を確認するには以下のコマンドで確認できます。
 ```
 $ ros2 topic echo /landmark_topic
