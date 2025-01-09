@@ -5,9 +5,13 @@
 
 [![test](https://github.com/junsei0/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/junsei0/mypkg/actions/workflows/test.yml)
 
-## テスト済みの環境
+## テスト環境
 - Ubuntu 20.04.6 LTS
-- ROS2 Humble Hawksbil
+- ROS2 Humble 
+
+## 開発環境
+- ubuntu20.04 LTS
+- ROS2 Foxy
 
 ## トピック内容
 本パッケージでは、特定の名所の緯度経度を3秒おきにstd_msgs.msg.String 型のメッセージを送るトピックを扱います。
